@@ -1,0 +1,17 @@
+.container-note {
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+
+  .noteArea {
+    width: 100%;
+    height: 400px;
+    border: 1ps solid blue;
+
+    &:focus {
+      outline: none !important;
+
+      border: 1px solid lightblue;
+    }
+  }
+}

@@ -1,20 +1,29 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import "../style/NoteApp/note.scss";
-import { useLocalStorage } from "./hook/useLocalStorage";
+import { useUpdateNote } from "./hook/useContext";
+
 function Note() {
-  const save = useLocalStorage();
+  const [note, setNote] = useState("");
+  const getAllValueLocalStorage = useUpdateNote();
+  let id = Math.floor(Math.random() * 100);
+
+  function saveToLocalStorage(key, value) {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  }
   return (
     <div className="container-note">
       <textarea
-        value={save.value}
         className="noteArea"
-        onChange={(e) => save.setValue(e.target.value)}
+        value={note}
+        onChange={(e) => setNote(e.target.value)}
       ></textarea>
       <button
+        className="button"
         onClick={(e) => {
           e.preventDefault();
-          save.save();
-          save.setValue("");
+          saveToLocalStorage(id, note);
+          setNote("");
+          getAllValueLocalStorage();
         }}
       >
         Save

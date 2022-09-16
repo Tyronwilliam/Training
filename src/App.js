@@ -6,7 +6,8 @@ import UseReducer from "./Hooks/UseReducer/UseReducer";
 import UseCallback from "./Hooks/UseCallback/UseCallback";
 import CustomHooks from "./Hooks/CustomHooks/CustomHooks";
 import Mains from "./NotesApp/Mains";
-import Main from "./TestCounterHook/Main";
+// import Main from "./TestCounterHook/Main";
+import Main from "./PokemonAPI/Main";
 function App() {
   return (
     <>
@@ -16,8 +17,8 @@ function App() {
       {/* <UseReducer /> */}
       {/* <UseCallback /> */}
       {/* <CustomHooks /> */}
-      <Mains />
-      {/* <Main /> */}
+      {/* <Mains /> */}
+      <Main />
     </>
   );
 }

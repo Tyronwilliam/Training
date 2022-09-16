@@ -4,5 +4,11 @@ body {
   box-sizing: border-box;
 }
 .container {
-  width: 100%;
+  width: 1200px;
+  margin: 0 auto;
+
+  .note-section {
+    display: flex;
+    justify-content: space-between;
+  }
 }
